@@ -29,7 +29,7 @@ const Navbar = () => {
   }, [isClient]);
 
   return (
-    <nav className="sticky top-0 z-20 bg-gray-500 py-4 px-6 flex items-center justify-between">
+    <nav className="sticky container max-w-[100rem] mx-auto top-0 z-20 bg-white shadow-xl py-4 px-6 flex items-center justify-between">
       {/* Logo */}
       <Link href="/" className="text-2xl flex items-center font-semibold">
         <div className='bg-red-700 text-3xl rounded'>W</div>
@@ -37,7 +37,7 @@ const Navbar = () => {
       </Link>
 
       {/* Navigation Links */}
-      <div className="flex items-center right-20  p-4 border-4 space-x-6">
+      <div className="flex items-center right-20  p-4 border-4 border-transparent space-x-6">
         <div className="relative ">
           <Link href="/products" className="text-white bg-black p-2 rounded font-bold transition-colors">
             Products

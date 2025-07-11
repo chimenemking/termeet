@@ -39,7 +39,7 @@ const ClockHero: React.FC<ClockProps> = ( {
   const secondRotation = second * 6;
 
   return (
-    <section className="relative  min-h-screen flex flex-col justify-center items-center text-center py-20">
+    <section className="relative container mx-auto max-w-[100rem] min-h-screen flex flex-col justify-center items-center text-center py-20">
       
 
     {/* background color layering test */}
@@ -82,7 +82,7 @@ const ClockHero: React.FC<ClockProps> = ( {
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-lg md:text-xl  text-white max-w-2xl mb-10"
+          className="text-lg md:text-xl  text-white mx-auto  max-w-2xl mb-10"
         >
           Discover meticulously crafted watches that blend minimalist design with unparalleled precision.
         </motion.p>
