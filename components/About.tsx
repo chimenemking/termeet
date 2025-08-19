@@ -19,7 +19,7 @@ const ClockAbout = () => {
           Our Craft
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
@@ -51,7 +51,7 @@ const ClockAbout = () => {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-16">
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}

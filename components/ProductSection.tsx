@@ -70,11 +70,19 @@ const ProductSection = () => {
                   <p className="text-sm  mb-4">
                     {product.description}
                   </p>
-                  <ul className="list-disc list-inside text-sm  ">
+                  <div className="list-disc list-inside text-sm  ">
                     {product.details.map((detail, index) => (
-                      <li key={index}>{detail}</li>
+                      <p key={index}>{detail}</p>
                     ))}
-                  </ul>
+                  </div>
+                  <div className="flex space-x-4 mt-4">
+                    <button className="bg-white text-black font-semibold py-2 px-6 rounded border border-black transition-colors duration-300 hover:bg-black hover:text-white">
+                      Buy Now
+                    </button>
+                    <button className="bg-black text-white font-semibold py-2 px-6 rounded border border-black transition-colors duration-300 hover:bg-white hover:text-black">
+                      Add to Cart
+                    </button>
+                  </div>
                 </div>
               </motion.div>
             ))}
