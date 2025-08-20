@@ -1,21 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+⌚ Timeless — A Luxury Watch E-Commerce Experience
+A minimalist, high-performance e-commerce frontend for a luxury watch brand. Built to demonstrate how modern web technologies can create a seamless, elegant, and brand-aligned user experience.
 
-## Getting Started
+https:///public/images/screenshot.jpg // Replace with your actual screenshot path
 
-First, run the development server:
+✨ It's Not Just a Store, It's a Vibe
+This project focuses on the feel of luxury. The goal wasn't just to display products, but to create a digital environment that reflects the craftsmanship and prestige of a high-end watch brand. Every interaction, from the subtle page transitions to the weighty micro-animations, is intentionally designed to feel premium.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🛠️ The Toolbox
+Framework: Next.js 14 (App Router)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Styling: Tailwind CSS
 
+Animations: Framer Motion
+
+Fonts: Geist Sans & Geist Mono
+
+Deployment: Vercel
+
+🎯 What It Does
+Cinematic Hero: A dynamic grid-based layout with a live clock that sets the tone immediately.
+
+Product Showcase: A filtered, animated grid of products with elegant cards.
+
+Protected Details: A login-gated product detail page (bypass available for demo).
+
+Motion-Enhanced FAQ: An elegant accordion section that builds trust and answers questions.
+
+Responsive & Sharp: Looks and feels impeccable on any device.
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
