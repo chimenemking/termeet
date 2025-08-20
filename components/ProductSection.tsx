@@ -27,7 +27,7 @@ const ProductSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Our Collection
+          Best Sellers
         </motion.h2>
 
         <motion.div 

@@ -42,7 +42,7 @@ const FAQSection = () => {
       {/* Subtle background effect */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-white opacity-10 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-nude-300 opacity-10 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-black opacity-10 rounded-full blur-3xl"></div>
       </div>
       
       <div className="max-w-4xl mx-auto relative z-10">
@@ -56,7 +56,7 @@ const FAQSection = () => {
         </motion.h2>
         
         <motion.p 
-          className="text-nude-600 text-center mb-12 font-sans"
+          className="text-black text-center mb-12 font-sans"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}

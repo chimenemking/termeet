@@ -5,6 +5,7 @@ import Hero from '@/components/Hero'
 import MoreAbout from '@/components/More'
 import Navbar from '@/components/Navbar'
 import ProductSection from '@/components/ProductSection'
+import TestimonialSection from '@/components/Testimonial'
 import React from 'react'
 
 type Props = {}
@@ -17,6 +18,7 @@ const Clockpage = (props: Props) => {
          <About/>
          <MoreAbout/>
         <ProductSection/>
+        <TestimonialSection/>
         <FAQSection/>
         {/* <Footer/> */}
     </div>
