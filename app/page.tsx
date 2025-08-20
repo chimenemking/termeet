@@ -1,4 +1,6 @@
 import About from '@/components/About'
+import FAQSection from '@/components/Faq'
+import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
 import MoreAbout from '@/components/More'
 import Navbar from '@/components/Navbar'
@@ -10,11 +12,13 @@ type Props = {}
 const Clockpage = (props: Props) => {
   return (
     <div>
-        <Navbar/>
+        {/* <Navbar/> */}
         <Hero/>
          <About/>
          <MoreAbout/>
         <ProductSection/>
+        <FAQSection/>
+        {/* <Footer/> */}
     </div>
   )
 }

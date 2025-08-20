@@ -1,6 +1,5 @@
 'use client'
 
-// components/ProductSection.tsx
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
@@ -16,32 +15,46 @@ const ProductSection = () => {
   const productVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -50 },
+    exit: { opacity: 0, scale: 0.95 },
   };
 
   return (
-    <section className="bg-nude-light py-20 px-4 md:px-0">
-      <div className="container mx-auto">
-        <h2 className="text-4xl md:text-5xl font-display font-semibold text-black text-center mb-10">
+    <section className="bg-nude-50 py-20 px-4 md:px-8">
+      <div className="max-w-7xl mx-auto">
+        <motion.h2 
+          className="text-4xl md:text-5xl font-semibold text-charcoal text-center mb-10"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           Our Collection
-        </h2>
+        </motion.h2>
 
-        <div className="flex justify-center mb-8">
+        <motion.div 
+          className="flex flex-wrap justify-center gap-3 mb-12"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
           {categories.map((category) => (
-            <button
+            <motion.button
               key={category}
-              className={`mx-2 px-4 py-2 rounded font-body text-nude-medium ${
-                selectedCategory === category ? "bg-black text-white" : "hover:bg-nude-medium hover:text-gray-800"
-              } transition-colors`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`px-5 py-2.5 rounded-full text-sm tracking-wide transition-all duration-300 ${
+                selectedCategory === category 
+                  ? "bg-black text-white shadow-md" 
+                  : "bg-white text-black border border-black  hover:shadow-sm"
+              }`}
               onClick={() => setSelectedCategory(category)}
             >
               {category}
-            </button>
+            </motion.button>
           ))}
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <AnimatePresence>
+          <AnimatePresence mode="popLayout">
             {filteredProducts.map((product) => (
               <motion.div
                 key={product.id}
@@ -49,39 +62,52 @@ const ProductSection = () => {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                transition={{ duration: 0.3 }}
-                className="bg-white rounded-lg shadow-md overflow-hidden"
+                transition={{ duration: 0.4 }}
+                className="bg-white rounded-xl shadow-sm overflow-hidden  hover:shadow-md transition-all duration-300 group"
               >
-                <div className="relative h-64">
+                <div className="relative h-72 bg-nude-50 overflow-hidden">
                   <Image
                     src={product.image}
                     alt={product.name}
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
+                  <div className="absolute top-4 right-4 bg-charcoal text-white text-xs py-1 px-3 rounded-full">
+                    {product.category}
+                  </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-2xl  mb-2">
+                  <h3 className="text-xl font-semibold text-charcoal mb-2 line-clamp-1">
                     {product.name}
                   </h3>
-                  <p className="text-lg  mb-4">
+                  <p className="text-2xl font-medium text-charcoal mb-4">
                     ${product.price}
                   </p>
-                  <p className="text-sm  mb-4">
+                  <p className="text-sm text-nude-600 mb-4 line-clamp-2 leading-relaxed">
                     {product.description}
                   </p>
-                  <div className="list-disc list-inside text-sm  ">
-                    {product.details.map((detail, index) => (
-                      <p key={index}>{detail}</p>
+                  <div className="text-xs text-nude-500 mb-5 flex flex-wrap gap-2">
+                    {product.details.slice(0, 2).map((detail, index) => (
+                      <span key={index} className="bg-nude-100 px-2 py-1 rounded">
+                        {detail}
+                      </span>
                     ))}
                   </div>
-                  <div className="flex space-x-4 mt-4">
-                    <button className="bg-white text-black font-semibold py-2 px-6 rounded border border-black transition-colors duration-300 hover:bg-black hover:text-white">
-                      Buy Now
-                    </button>
-                    <button className="bg-black text-white font-semibold py-2 px-6 rounded border border-black transition-colors duration-300 hover:bg-white hover:text-black">
+                  <div className="flex gap-3 mt-4">
+                    <motion.button 
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="flex-1 bg-white text-charcoal font-medium py-2.5 px-4 rounded-lg border border-nude-300 transition-colors duration-300 hover:bg-nude-50"
+                    >
+                      View Details
+                    </motion.button>
+                    <motion.button 
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="flex-1 bg-black text-white font-medium py-2.5 px-4 rounded-lg border border-black transition-colors duration-300 hover:opacity-90"
+                    >
                       Add to Cart
-                    </button>
+                    </motion.button>
                   </div>
                 </div>
               </motion.div>

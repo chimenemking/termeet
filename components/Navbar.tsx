@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className="sticky container max-w-[100rem] mx-auto top-0 z-20 bg-white shadow-xl py-4 px-6 flex items-center justify-between">
       {/* Logo */}
       <Link href="/" className="text-2xl flex items-center font-semibold">
-        <div className='bg-red-700 text-3xl rounded'>W</div>
+        <div className='bg-red-700 text-3xl rounded'>T</div>
         <div className='bg-black text-white text-2xl rounded'>C</div>
       </Link>
 
